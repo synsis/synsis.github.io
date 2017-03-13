@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Synsis</title>
+  <subtitle>想要当恶龙的屠龙战士</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://synsis.github.io/"/>
+  <updated>2017-03-13T21:13:36.858Z</updated>
+  <id>https://synsis.github.io/</id>
+  
+  <author>
+    <name>Synsis</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://synsis.github.io/2017/03/13/hello_world/"/>
+    <id>https://synsis.github.io/2017/03/13/hello_world/</id>
+    <published>2017-03-13T18:45:59.368Z</published>
+    <updated>2017-03-13T21:13:36.858Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello World</p>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="Test-1"><a href="#Test-1" class="headerlink" title="Test"></a>Test</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Test</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://synsis.github.io">Writing</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hello World&lt;/p&gt;
+&lt;h2 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h2&gt;&lt;h3 id=&quot;Test-1&quot;&gt;&lt;a href=&quot;#Test-1&quot; class=&quot;heade
+    
+    </summary>
+    
+      <category term="Hello World" scheme="https://synsis.github.io/categories/Hello-World/"/>
+    
+    
+      <category term="Hello World" scheme="https://synsis.github.io/tags/Hello-World/"/>
+    
+  </entry>
+  
+</feed>
