@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://synsis.github.io/"/>
-  <updated>2017-03-14T13:16:45.417Z</updated>
+  <updated>2017-03-14T13:29:18.141Z</updated>
   <id>https://synsis.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>Human Visual Perception</title>
     <link href="https://synsis.github.io/2017/03/14/Human_visual_Perception/"/>
     <id>https://synsis.github.io/2017/03/14/Human_visual_Perception/</id>
-    <published>2017-03-14T13:08:38.380Z</published>
-    <updated>2017-03-14T13:16:45.417Z</updated>
+    <published>2017-03-14T13:08:38.000Z</published>
+    <updated>2017-03-14T13:29:18.141Z</updated>
     
     <content type="html"><![CDATA[<p>sfsfsfsfs</p>
 ]]></content>
@@ -33,8 +33,6 @@
     </summary>
     
       <category term="Image Processing" scheme="https://synsis.github.io/categories/Image-Processing/"/>
-    
-      <category term="Human Visual Perception" scheme="https://synsis.github.io/categories/Image-Processing/Human-Visual-Perception/"/>
     
     
       <category term="Image Processing" scheme="https://synsis.github.io/tags/Image-Processing/"/>
