@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synsis — Tech Notes &amp; PDFs</title>
   <meta name="description" content="Chronological archive of tech notes, papers, and PDF drafts.">
+  <link rel="canonical" href="https://synsis.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Synsis">
+  <meta property="og:title" content="Synsis — Tech Notes &amp; PDFs">
+  <meta property="og:description" content="Chronological archive of tech notes, papers, and PDF drafts.">
+  <meta property="og:url" content="https://synsis.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Synsis — Tech Notes &amp; PDFs">
+  <meta name="twitter:description" content="Chronological archive of tech notes, papers, and PDF drafts.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Synsis — Tech Notes & PDFs",
+    "url": "https://synsis.github.io/",
+    "description": "Chronological archive of tech notes, papers, and PDF drafts.",
+    "inLanguage": "en"
+  }
+  </script>
   <style>
     :root {
       --bg: #fafaf8;
@@ -52,7 +72,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       background: var(--bg);
@@ -66,6 +87,7 @@
       color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       color: var(--accent-hover);
       text-decoration: underline;
@@ -124,6 +146,7 @@
       align-items: center;
       gap: 6px;
     }
+
     .profile-links a:hover {
       color: var(--accent);
       text-decoration: none;
@@ -140,6 +163,7 @@
       white-space: nowrap;
       transition: border-color 0.15s, color 0.15s;
     }
+
     .theme-btn:hover {
       border-color: var(--border-strong);
       color: var(--text);
@@ -193,6 +217,7 @@
       outline: none;
       transition: border-color 0.15s;
     }
+
     .search-input:focus {
       border-color: var(--accent);
     }
@@ -209,6 +234,7 @@
       align-items: center;
       gap: 6px;
     }
+
     .sort-btn:hover {
       border-color: var(--border-strong);
       color: var(--text);
@@ -232,10 +258,12 @@
       cursor: pointer;
       transition: all 0.15s;
     }
+
     .tag-filter:hover {
       border-color: var(--border-strong);
       color: var(--text);
     }
+
     .tag-filter.active {
       background: var(--accent);
       border-color: var(--accent);
@@ -257,6 +285,7 @@
       align-items: center;
       gap: 12px;
     }
+
     .year-heading::after {
       content: "";
       flex: 1;
@@ -268,6 +297,7 @@
       position: relative;
       padding-left: 26px;
     }
+
     .timeline::before {
       content: "";
       position: absolute;
@@ -282,6 +312,7 @@
       position: relative;
       margin-bottom: 22px;
     }
+
     .paper-item:last-child {
       margin-bottom: 0;
     }
@@ -306,6 +337,7 @@
       box-shadow: var(--shadow-sm);
       transition: border-color 0.15s, box-shadow 0.15s;
     }
+
     .paper-card:hover {
       border-color: var(--border-strong);
       box-shadow: var(--shadow-md);
@@ -393,6 +425,7 @@
       color: var(--text-secondary);
       line-height: 1.65;
     }
+
     .abstract-box.hidden {
       display: none;
     }
@@ -420,6 +453,7 @@
       text-decoration: none;
       transition: all 0.15s;
     }
+
     .btn:hover {
       border-color: var(--border-strong);
       background: var(--surface-subtle);
@@ -432,6 +466,7 @@
       border-color: var(--accent);
       color: #ffffff;
     }
+
     .btn-primary:hover {
       background: var(--accent-hover);
       border-color: var(--accent-hover);
@@ -458,6 +493,7 @@
       z-index: 1000;
       padding: 20px;
     }
+
     .modal-backdrop.open {
       display: flex;
     }
@@ -534,27 +570,34 @@
       .container {
         padding: 24px 16px 60px;
       }
+
       .site-header {
         flex-direction: column;
       }
+
       .search-input {
         width: 100%;
       }
+
       .controls {
         width: 100%;
       }
+
       .paper-card {
         padding: 16px;
       }
+
       .modal-backdrop {
         padding: 8px;
       }
+
       .modal-shell {
         height: 92vh;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header class="site-header">
@@ -574,13 +617,8 @@
           <span id="paperCount" class="count-pill">0</span>
         </h2>
         <div class="controls">
-          <input
-            id="searchInput"
-            class="search-input"
-            type="search"
-            placeholder="Search title, tags, date..."
-            aria-label="Search papers"
-          >
+          <input id="searchInput" class="search-input" type="search" placeholder="Search title, tags, date..."
+            aria-label="Search papers">
           <button id="sortToggle" class="sort-btn" type="button">
             ↓ Newest
           </button>
@@ -588,7 +626,32 @@
       </div>
 
       <div id="tagBar" class="tag-bar"></div>
-      <div id="timelineRoot"></div>
+      <div id="timelineRoot">
+        <!-- Static fallback for search engine crawlers before JS hydration -->
+        <section class="year-group">
+          <h3 class="year-heading">2026</h3>
+          <div class="timeline">
+            <article class="paper-item" id="paper-fwsp-v1">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="paper-card">
+                <div class="paper-meta">
+                  <span class="date-badge">2026-11-25</span>
+                  <span class="version-badge">v1 (Initial Draft)</span>
+                  <span class="status-badge">Preprint</span>
+                </div>
+                <h3 class="paper-title"><a href="papers/fwsp-v1/">Do We Really Need an LLM for Weight-Space Programming?</a></h3>
+                <p class="paper-subtitle">A Deterministic Forward-Only Paradigm and Its Capability Boundaries</p>
+                <div class="abstract-box"><strong>Abstract.</strong> Recent studies on Weight-Space Programming and self-rewriting language models show that LLMs can inspect and edit neural weights using only forward passes, yet they conflate LLM script generation with the underlying algebra of forward-only editing. We formalize Forward Weight-Space Programming (FWSP), an LLM-free, four-stage pipeline with zero inference overhead across five modalities and nine models from 50K to 9.4B parameters.</div>
+                <div class="paper-actions">
+                  <a class="btn btn-primary" href="papers/fwsp-v1/">Read Page</a>
+                  <a class="btn" href="papers/2026-11-25-fwsp-v1.pdf">Open PDF</a>
+                  <a class="btn" href="https://github.com/synsis/weight_space_programming">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -646,7 +709,7 @@
         document.documentElement.setAttribute("data-theme", theme);
         themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
         try { localStorage.setItem("synsis-theme", theme); } catch (_) {}
-      }
+      } 
 
       const savedTheme = (() => {
         try { return localStorage.getItem("synsis-theme"); } catch (_) { return null; }
@@ -743,6 +806,14 @@
                   .map((t) => `<span class="paper-tag">${escapeHtml(t)}</span>`)
                   .join("");
 
+                const titleHtml = p.page
+                  ? `<a href="${escapeHtml(p.page)}" style="color:inherit">${escapeHtml(p.title)}</a>`
+                  : escapeHtml(p.title);
+
+                const pageBtn = p.page
+                  ? `<a class="btn" href="${escapeHtml(p.page)}">Permalink</a>`
+                  : "";
+
                 const codeBtn = p.code
                   ? `<a class="btn" href="${escapeHtml(p.code)}" target="_blank" rel="noopener">Code</a>`
                   : "";
@@ -764,7 +835,7 @@
                         ${p.version ? `<span class="version-badge">${escapeHtml(p.version)}</span>` : ""}
                         ${p.status ? `<span class="status-badge">${escapeHtml(p.status)}</span>` : ""}
                       </div>
-                      <h3 class="paper-title">${escapeHtml(p.title)}</h3>
+                      <h3 class="paper-title">${titleHtml}</h3>
                       ${p.subtitle ? `<p class="paper-subtitle">${escapeHtml(p.subtitle)}</p>` : ""}
                       ${tagsHtml ? `<div class="paper-tags">${tagsHtml}</div>` : ""}
                       ${abstractBlock}
@@ -772,6 +843,7 @@
                         <button type="button" class="btn btn-primary" data-preview-id="${escapeHtml(p.id)}">Preview PDF</button>
                         <a class="btn" href="${escapeHtml(p.pdf)}" target="_blank" rel="noopener">Open</a>
                         <a class="btn" href="${escapeHtml(p.pdf)}" download>Download</a>
+                        ${pageBtn}
                         ${codeBtn}
                         ${abstractToggle}
                       </div>
@@ -874,4 +946,5 @@
     })();
   </script>
 </body>
+
 </html>

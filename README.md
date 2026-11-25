@@ -15,9 +15,11 @@ Minimal chronological PDF & notes archive hosted at https://synsis.github.io/.
      title: "Paper Title",
      subtitle: "Optional Subtitle",
      tags: ["Tag1", "Tag2"],
+     page: "papers/my-paper-v2/",
      pdf: "papers/2026-12-01-my-paper-v2.pdf",
      code: "https://github.com/synsis/...",
      abstract: "..."
    }
    ```
-3. Commit and push to `master`. The homepage automatically sorts and groups all entries by date.
+3. (Optional, for SEO) Add a static landing page in `papers/my-paper-v2/index.html` and add its URL + PDF URL to `sitemap.xml`.
+4. Commit and push to `master`. The homepage automatically sorts and groups all entries by date.

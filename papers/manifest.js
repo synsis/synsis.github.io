@@ -9,6 +9,7 @@ window.PAPERS = [
     title: "Do We Really Need an LLM for Weight-Space Programming?",
     subtitle: "A Deterministic Forward-Only Paradigm and Its Capability Boundaries",
     tags: ["Weight-Space Programming", "Forward-Only Editing", "LLM Reasoning", "Mechanistic Editing"],
+    page: "papers/fwsp-v1/",
     pdf: "papers/2026-11-25-fwsp-v1.pdf",
     code: "https://github.com/synsis/weight_space_programming",
     abstract:
