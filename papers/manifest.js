@@ -8,8 +8,6 @@ window.PAPERS = [
     status: "Preprint",
     title: "Do We Really Need an LLM for Weight-Space Programming?",
     subtitle: "A Deterministic Forward-Only Paradigm and Its Capability Boundaries",
-    authors: "Lin Yao",
-    affiliation: "School of Computer Science, Shanghai Jiao Tong University · Zhongguancun Academy",
     tags: ["Weight-Space Programming", "Forward-Only Editing", "LLM Reasoning", "Mechanistic Editing"],
     pdf: "papers/2026-11-25-fwsp-v1.pdf",
     code: "https://github.com/synsis/weight_space_programming",

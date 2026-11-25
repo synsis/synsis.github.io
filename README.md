@@ -1,6 +1,6 @@
 # synsis.github.io
 
-Personal papers & PDF preprints archive for Lin Yao (`Synsis`), hosted at https://synsis.github.io/.
+Minimal chronological PDF & notes archive hosted at https://synsis.github.io/.
 
 ## How to add a new PDF
 
@@ -14,8 +14,6 @@ Personal papers & PDF preprints archive for Lin Yao (`Synsis`), hosted at https:
      status: "Preprint",
      title: "Paper Title",
      subtitle: "Optional Subtitle",
-     authors: "Lin Yao",
-     affiliation: "Shanghai Jiao Tong University · Zhongguancun Academy",
      tags: ["Tag1", "Tag2"],
      pdf: "papers/2026-12-01-my-paper-v2.pdf",
      code: "https://github.com/synsis/...",

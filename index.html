@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lin Yao (Synsis) — Papers &amp; Preprints</title>
-  <meta name="description" content="Chronological archive of papers, preprints, and technical drafts by Lin Yao (Synsis).">
+  <title>Synsis — Tech Notes &amp; PDFs</title>
+  <meta name="description" content="Chronological archive of tech notes, papers, and PDF drafts.">
   <style>
     :root {
       --bg: #fafaf8;
@@ -559,16 +559,8 @@
   <div class="container">
     <header class="site-header">
       <div>
-        <h1 class="profile-name">
-          Lin Yao <span class="profile-handle">@synsis</span>
-        </h1>
-        <p class="profile-affiliation">
-          School of Computer Science, Shanghai Jiao Tong University · Zhongguancun Academy
-        </p>
-        <div class="profile-links">
-          <a href="mailto:lin.yao@sjtu.edu.cn">lin.yao@sjtu.edu.cn</a>
-          <a href="https://github.com/synsis" target="_blank" rel="noopener">GitHub</a>
-        </div>
+        <h1 class="profile-name">Synsis</h1>
+        <p class="profile-affiliation">Notes, Papers &amp; Technical Drafts</p>
       </div>
       <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle color theme">
         Dark Mode
@@ -600,8 +592,8 @@
     </main>
 
     <footer class="site-footer">
-      <span>© Lin Yao (Synsis) · Hosted on GitHub Pages</span>
-      <span>Papers &amp; Technical Drafts Archive</span>
+      <span>Synsis</span>
+      <span>Chronological PDF Archive</span>
     </footer>
   </div>
 
@@ -774,7 +766,6 @@
                       </div>
                       <h3 class="paper-title">${escapeHtml(p.title)}</h3>
                       ${p.subtitle ? `<p class="paper-subtitle">${escapeHtml(p.subtitle)}</p>` : ""}
-                      <p class="paper-authors">${escapeHtml(p.authors)}${p.affiliation ? ` · <span style="color:var(--text-muted)">${escapeHtml(p.affiliation)}</span>` : ""}</p>
                       ${tagsHtml ? `<div class="paper-tags">${tagsHtml}</div>` : ""}
                       ${abstractBlock}
                       <div class="paper-actions">
