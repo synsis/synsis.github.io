@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +24,8 @@
       --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
       --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.08);
       --radius: 12px;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Songti SC", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
@@ -570,7 +570,7 @@
     <main>
       <div class="toolbar">
         <h2 class="section-title">
-          PDF Archive · 按时间归档
+          Archive
           <span id="paperCount" class="count-pill">0</span>
         </h2>
         <div class="controls">
@@ -578,11 +578,11 @@
             id="searchInput"
             class="search-input"
             type="search"
-            placeholder="搜索标题、关键词、日期..."
+            placeholder="Search title, tags, date..."
             aria-label="Search papers"
           >
           <button id="sortToggle" class="sort-btn" type="button">
-            ↓ 最新优先
+            ↓ Newest
           </button>
         </div>
       </div>
@@ -606,9 +606,9 @@
           <div id="modalSub" class="modal-sub"></div>
         </div>
         <div class="modal-actions">
-          <a id="modalOpenTab" class="btn" href="#" target="_blank" rel="noopener">新标签打开</a>
-          <a id="modalDownload" class="btn" href="#" download>下载 PDF</a>
-          <button id="modalClose" class="btn" type="button">关闭 (Esc)</button>
+          <a id="modalOpenTab" class="btn" href="#" target="_blank" rel="noopener">Open in New Tab</a>
+          <a id="modalDownload" class="btn" href="#" download>Download</a>
+          <button id="modalClose" class="btn" type="button">Close (Esc)</button>
         </div>
       </div>
       <iframe id="pdfFrame" class="pdf-frame" title="PDF Preview"></iframe>
@@ -676,7 +676,7 @@
         const tags = ["ALL", ...Array.from(tagSet)];
         tagBar.innerHTML = tags
           .map((tag) => {
-            const label = tag === "ALL" ? "全部" : tag;
+            const label = tag === "ALL" ? "All" : tag;
             const active = state.activeTag === tag ? "active" : "";
             return `<button type="button" class="tag-filter ${active}" data-tag="${escapeHtml(tag)}">${escapeHtml(label)}</button>`;
           })
@@ -713,10 +713,10 @@
 
       function renderTimeline() {
         const list = getFilteredPapers();
-        paperCount.textContent = `${list.length} 篇`;
+        paperCount.textContent = `${list.length} ${list.length === 1 ? "doc" : "docs"}`;
 
         if (list.length === 0) {
-          timelineRoot.innerHTML = `<div class="empty-state">没有匹配的 PDF 文档。</div>`;
+          timelineRoot.innerHTML = `<div class="empty-state">No matching PDFs found.</div>`;
           return;
         }
 
@@ -748,7 +748,7 @@
                   : "";
 
                 const abstractToggle = p.abstract
-                  ? `<button type="button" class="btn" data-toggle-abstract="${escapeHtml(p.id)}">${expandAbstractByDefault ? "收起摘要" : "查看摘要"}</button>`
+                  ? `<button type="button" class="btn" data-toggle-abstract="${escapeHtml(p.id)}">${expandAbstractByDefault ? "Hide Abstract" : "Abstract"}</button>`
                   : "";
 
                 const abstractBlock = p.abstract
@@ -769,9 +769,9 @@
                       ${tagsHtml ? `<div class="paper-tags">${tagsHtml}</div>` : ""}
                       ${abstractBlock}
                       <div class="paper-actions">
-                        <button type="button" class="btn btn-primary" data-preview-id="${escapeHtml(p.id)}">在线预览 PDF</button>
-                        <a class="btn" href="${escapeHtml(p.pdf)}" target="_blank" rel="noopener">新标签打开</a>
-                        <a class="btn" href="${escapeHtml(p.pdf)}" download>下载 PDF</a>
+                        <button type="button" class="btn btn-primary" data-preview-id="${escapeHtml(p.id)}">Preview PDF</button>
+                        <a class="btn" href="${escapeHtml(p.pdf)}" target="_blank" rel="noopener">Open</a>
+                        <a class="btn" href="${escapeHtml(p.pdf)}" download>Download</a>
                         ${codeBtn}
                         ${abstractToggle}
                       </div>
@@ -831,7 +831,7 @@
 
       sortToggle.addEventListener("click", () => {
         state.sortDesc = !state.sortDesc;
-        sortToggle.textContent = state.sortDesc ? "↓ 最新优先" : "↑ 最早优先";
+        sortToggle.textContent = state.sortDesc ? "↓ Newest" : "↑ Oldest";
         renderTimeline();
       });
 
@@ -847,7 +847,7 @@
           const box = document.getElementById(`abs-${id}`);
           if (box) {
             const isHidden = box.classList.toggle("hidden");
-            absBtn.textContent = isHidden ? "查看摘要" : "收起摘要";
+            absBtn.textContent = isHidden ? "Abstract" : "Hide Abstract";
           }
         }
       });
