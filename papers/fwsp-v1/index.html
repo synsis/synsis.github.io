@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Do We Really Need an LLM for Weight-Space Programming? — Synsis</title>
-  <meta name="description" content="Forward Weight-Space Programming (FWSP): a deterministic, LLM-free, four-stage forward-only weight-editing paradigm across five modalities and nine models from 50K to 9.4B parameters, and its capability boundaries.">
+  <meta name="description" content="Forward Weight-Space Programming (FWSP): a deterministic, LLM-free, four-stage forward-only weight-editing paradigm across five modalities and thirteen models from 50K parameters up to 27B dense and 186GB FP8 MoE, and its capability boundaries.">
   <meta name="keywords" content="Weight-Space Programming, Forward Weight-Space Programming, FWSP, Forward-Only Editing, LLM Reasoning, OrthGate, Mechanistic Editing, Model Repair, Backpropagation-Free">
   <link rel="canonical" href="https://synsis.github.io/papers/fwsp-v1/">
 
@@ -29,7 +29,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Do We Really Need an LLM for Weight-Space Programming?">
-  <meta name="twitter:description" content="Forward Weight-Space Programming (FWSP): deterministic, LLM-free forward-only weight editing across five modalities and nine models up to 9.4B parameters.">
+  <meta name="twitter:description" content="Forward Weight-Space Programming (FWSP): deterministic, LLM-free forward-only weight editing across five modalities and thirteen models up to 27B dense and 186GB FP8 MoE.">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -349,7 +349,7 @@
       <section class="card">
         <h2>Abstract</h2>
         <p>
-          Recent studies on Weight-Space Programming and self-rewriting language models show that LLMs can inspect and edit neural weights using only forward passes, yet they conflate LLM script generation with the underlying algebra of forward-only editing. We show that for core structured weight-editing tasks, an LLM optimizer is not required: these edits reduce to deterministic linear-algebraic operations. We formalize this paradigm as Forward Weight-Space Programming (FWSP), an LLM-free, four-stage pipeline (probing, localization, stratified operators O1&ndash;O4, and paired verification) with zero inference overhead. Across five modalities and nine models from 50K to 9.4B parameters (CNNs, DINOv2-Base, Gymnasium policies, Burgers FNO, Qwen3-8B, Qwen3.5-0.8B, DeepSeek-R1-0528-8B, and GLM-Z1-9B), FWSP achieves 100% Top-1 fault localization (restoring corrupted Qwen3-8B perplexity from 7,375.7 to 5.45 in 2.67s), eliminates BadNets backdoors (100% &rarr; 0% ASR), beats 4-shot ICL by 4.5% on 1,100 public NLP queries at 3.2&times; lower token cost, and mitigates reasoning overthinking loops without gradients (+40.6% GSM8K, +28.8% MATH-500, +9.2% zero-shot HumanEval under constrained token budgets on DeepSeek-R1-0528-8B; +38.3% GSM8K on Qwen3.5-0.8B) while safely abstaining where MeZO degrades GLM-Z1-9B. Conversely, we prove and verify two fundamental barriers&mdash;subspace entanglement and frozen-upstream representation span&mdash;where warm-starting localized LoRA from FWSP lifts damaged, shifted DINOv2-Base from 8.6% to 88.1% with 10.7&times; fewer trainable parameters.
+          Recent studies on Weight-Space Programming and self-rewriting language models show that LLMs can inspect and edit neural weights using only forward passes, yet they conflate LLM script generation with the underlying algebra of forward-only editing. We show that for core structured weight-editing tasks, an LLM optimizer is not required: these edits reduce to deterministic linear-algebraic operations. We formalize this paradigm as Forward Weight-Space Programming (FWSP), an LLM-free, four-stage pipeline (probing, localization, stratified operators O1&ndash;O4, and paired verification) with zero inference overhead. Across five modalities and thirteen models from 50K parameters up to 27B dense and 186GB FP8 MoE (CNNs, DINOv2-Base, Gymnasium policies, Burgers FNO, Qwen3-8B, Qwen3.5-0.8B/4B/9B, DeepSeek-R1-0528-8B, GLM-Z1-9B, Qwen3.8-27B, and Qwen3.8-Flash-Next-FP8), FWSP achieves 100% Top-1 fault localization (restoring corrupted Qwen3-8B perplexity from 7,375.7 to 5.45 in 2.67s, outperforming an interactive Qwen3-8B sandbox agent in reliability and latency), eliminates BadNets backdoors (100% &rarr; 0% ASR), beats 4-shot ICL by 4.5% on 1,100 public NLP queries at 3.2&times; lower token cost, and mitigates reasoning overthinking loops without gradients (+38.3&ndash;44.5% GSM8K and +20.0&ndash;28.8% MATH-500 under constrained token budgets across Qwen3.5-0.8B/4B/9B and DeepSeek-R1-0528-8B; +9.2% zero-shot HumanEval on DeepSeek-R1-0528-8B) while safely abstaining where MeZO degrades GLM-Z1-9B. Conversely, we prove and verify two fundamental barriers&mdash;subspace entanglement and frozen-upstream representation span&mdash;where warm-starting localized LoRA from FWSP lifts damaged, shifted DINOv2-Base from 8.6% to 88.1% with 10.7&times; fewer trainable parameters.
         </p>
       </section>
 
@@ -357,8 +357,8 @@
         <h2>Key Highlights</h2>
         <ul class="highlights">
           <li><strong>LLM-Free Forward-Only Pipeline:</strong> Four-stage deterministic architecture (probing, localization, stratified operators O1&ndash;O4, and paired verification) with zero inference overhead.</li>
-          <li><strong>Cross-Modality Scale (50K &rarr; 9.4B):</strong> Verified across CNNs, DINOv2-Base, Gymnasium RL policies, Burgers FNO PDE surrogates, and modern reasoning LLMs.</li>
-          <li><strong>Reasoning Calibration (OrthGate):</strong> Mitigates overthinking loops without gradients (+40.6% GSM8K, +28.8% MATH-500, +9.2% HumanEval on DeepSeek-R1-0528-8B under tight token budgets).</li>
+          <li><strong>Cross-Modality Scale (50K &rarr; 27B Dense &amp; 186GB FP8 MoE):</strong> Verified across thirteen models spanning CNNs, DINOv2-Base, Gymnasium RL policies, Burgers FNO PDE surrogates, Qwen3/3.5/3.8, DeepSeek-R1, and GLM-Z1.</li>
+          <li><strong>Reasoning Calibration (OrthGate):</strong> Mitigates overthinking loops without gradients (+38.3&ndash;44.5% GSM8K, +20.0&ndash;28.8% MATH-500 across Qwen3.5-0.8B/4B/9B and DeepSeek-R1-0528-8B; +9.2% HumanEval on DeepSeek-R1-0528-8B under tight token budgets).</li>
           <li><strong>Capability Boundaries &amp; Hybrid Synergy:</strong> Formalizes subspace entanglement and representation-span limits, showing FWSP + localized LoRA lifts damaged, shifted DINOv2-Base from 8.6% to 88.1% with 10.7&times; fewer trainable parameters.</li>
         </ul>
       </section>
